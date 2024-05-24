@@ -1,0 +1,345 @@
+{
+    "name": "VRInputs",
+    "maps": [
+        {
+            "name": "VRLeftHand",
+            "id": "82f7e191-c8ba-433b-b761-5eb71f680e44",
+            "actions": [
+                {
+                    "name": "ThumbHaptic",
+                    "type": "Button",
+                    "id": "16e847c2-2de1-4767-a0bc-fee208ae7e31",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "IndexHaptic",
+                    "type": "Button",
+                    "id": "63b5e335-d3b5-4ed2-b145-d2c22f4dc0e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pinch",
+                    "type": "Value",
+                    "id": "c63c952f-2298-4514-9add-b8e6446f30c9",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "dbda568f-aca4-450e-b43b-2934965d8145",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Joystick",
+                    "type": "Value",
+                    "id": "fd66bb01-1004-4b58-af93-9f7b39e0c4bf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "JoystickClick",
+                    "type": "Button",
+                    "id": "c5f81577-cc7f-420a-8e59-25e82c4a9ef8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "38b3aa14-0d53-4d26-bd2c-61427da992cf",
+                    "path": "<XRController>{LeftHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aaaf0be5-a4aa-4143-b275-50e8de307b93",
+                    "path": "<XRController>{LeftHand}/secondaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09f48c34-d048-4e9d-8854-9a5e10bfdc6b",
+                    "path": "<XRController>{LeftHand}/touchpadTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "973cd68e-2be7-4590-bdc1-f139f93a06b1",
+                    "path": "<XRController>{LeftHand}/thumbstickTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56173c98-24bd-4cf4-8265-d3dbb7b806d1",
+                    "path": "<XRController>{LeftHand}/triggerTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "IndexHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1493a45e-7b83-4597-980e-6118ad5aa492",
+                    "path": "<XRController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pinch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cef4b541-0cdf-416a-8087-298216f96cab",
+                    "path": "<XRController>{LeftHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb237f6d-fe75-4167-98d3-fc2dc739e23e",
+                    "path": "<XRController>{LeftHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "318ec242-ce21-4b00-b72f-a05ca2dadec1",
+                    "path": "<XRController>{LeftHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "VRRightHand",
+            "id": "63fc1d9f-a38f-4f7d-a05e-935e71787342",
+            "actions": [
+                {
+                    "name": "ThumbHaptic",
+                    "type": "Button",
+                    "id": "ee31be26-30fd-409f-8f1b-bc187ff31025",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "IndexHaptic",
+                    "type": "Button",
+                    "id": "446018bb-80f1-4a00-8b07-99e61982bfad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pinch",
+                    "type": "Value",
+                    "id": "651a8d41-9b84-4374-a36d-0c54362ae356",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Grip",
+                    "type": "Value",
+                    "id": "116c2da8-5f4b-4af4-991f-ef9b2c40aec7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Joystick",
+                    "type": "Value",
+                    "id": "106db556-687c-477d-b824-f5b6a7cc3c4a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "JoystickClick",
+                    "type": "Button",
+                    "id": "671de047-4cc2-47e8-9560-63e2a732d16d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f4a1409b-7068-48a7-8641-0686fba1e2bb",
+                    "path": "<XRController>{RightHand}/primaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a3c1b471-10d6-49ca-a530-869ff9bda3de",
+                    "path": "<XRController>{RightHand}/secondaryTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bcc235a5-8f59-4e95-8d0b-79ee9d0367c6",
+                    "path": "<XRController>{RightHand}/touchpadTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ab7f98c-5f59-4574-acb9-ae3b46af6031",
+                    "path": "<XRController>{RightHand}/thumbstickTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThumbHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad990970-c1a0-410a-a7f6-24a293d7a490",
+                    "path": "<XRController>{RightHand}/triggerTouched",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "IndexHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2344b98c-e6dd-451e-93e9-66ef57d3a0a0",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pinch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa2710ad-78fe-465b-9e7c-bd63b11f8071",
+                    "path": "<XRController>{RightHand}/grip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43dac790-d585-4acb-a765-7ab16f7a8bd2",
+                    "path": "<XRController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Joystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "407fd614-9981-4f36-872e-365a7703b4e7",
+                    "path": "<XRController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoystickClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "XR Controller",
+            "bindingGroup": "XR Controller",
+            "devices": [
+                {
+                    "devicePath": "<XRController>{LeftHand}",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XRController>{RightHand}",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
