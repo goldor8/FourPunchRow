@@ -87,7 +87,7 @@ public class HandAnimator : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         thumbDown = thumbHapticAction.action.IsPressed();
         indexDown = indexHapticAction.action.IsPressed();

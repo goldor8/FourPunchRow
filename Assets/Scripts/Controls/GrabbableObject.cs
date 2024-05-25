@@ -21,16 +21,6 @@ public class GrabbableObject : MonoBehaviour, IInteractable
     
     void Start()
     {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         objectRigidbody = GetComponent<Rigidbody>();
     }
 
