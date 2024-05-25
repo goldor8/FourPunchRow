@@ -6,12 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class GrabbableObject : MonoBehaviour, IInteractable
 {
-    public bool teleported = false;
-    private Transform originalParent;
     private Rigidbody objectRigidbody;
-    public bool isOxygen;
     private Vector3 lastPosition;
-    private Vector3 currentVelocity;
     private RigidbodyData previousData;
     private int previousLayer;
     private HashSet<FixedJoint> grabbers = new HashSet<FixedJoint>();
@@ -25,14 +21,17 @@ public class GrabbableObject : MonoBehaviour, IInteractable
     
     void Start()
     {
-        originalParent = transform.parent;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         objectRigidbody = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate()
-    {
-        currentVelocity = (transform.position - lastPosition) / Time.fixedDeltaTime;
-        lastPosition = transform.position;
     }
 
     public void Grab(InteractEvent @event)
