@@ -16,7 +16,7 @@ public class TimeToNextPhase : MonoBehaviour
     [SerializeField] private AnimatedOverlayCmp phaseBoxingOverlay;
     [SerializeField] private AnimatedOverlayCmp phaseFourInRowsOverlay;
     
-    private readonly Countdown countdown = new(TIME_TO_NEXT_PHASE); // last frame = unload
+    private readonly Countdown countdown = new(TIME_TO_NEXT_PHASE);
     private readonly UnityEvent ringGotoBoxingEvent = new();
     private readonly UnityEvent ringGotoFourInRowsEvent = new();
     private bool isBoxing = true;
