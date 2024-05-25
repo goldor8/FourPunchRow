@@ -1,3 +1,4 @@
+using Logan.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,7 +18,7 @@ public class GameLogic : MonoBehaviour
         counterEntity.GetGameCanBeginEvent().AddListener(onGameCanBegin);
     }
 
-    private void onGameCanBegin()
+    private static void onGameCanBegin()
     {
         // log
         Debug.Log("GameLogic: onGameCanBegin");
