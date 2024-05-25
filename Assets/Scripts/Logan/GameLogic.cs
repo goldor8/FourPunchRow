@@ -4,24 +4,33 @@ using UnityEngine.Events;
 
 public class GameLogic : MonoBehaviour
 {
-    // pub
-    private UnityEvent ringGotoBoxingEvent;
-    private UnityEvent ringGotoFourInRowsEvent;
     
     // sub
-    public CounterEntity counterEntity;
+    [SerializeField] private StartCounterManager startCounterManager;
+    [SerializeField] private TimeToNextPhase timeToNextPhase;
+    
     private UnityEvent<int> playerOneDamageEvent;
     private UnityEvent playerOneKilled;
     
     void Start()
     {
-        counterEntity.GetGameCanBeginEvent().AddListener(onGameCanBegin);
+        startCounterManager.GetGameCanBeginEvent().AddListener(OnGameCanBegin);
+        timeToNextPhase.EvtChangeModeToBoxing().AddListener(OnChangeModeToBoxing);
+        timeToNextPhase.EvtChangeModeToFour().AddListener(OnChangeModeToFourInRows);
     }
 
-    private static void onGameCanBegin()
+    private void OnGameCanBegin()
     {
-        // log
-        Debug.Log("GameLogic: onGameCanBegin");
+        timeToNextPhase.OnGameReallyStarts();
+        Debug.Log("Game can begin!");
+    }
+    private void OnChangeModeToFourInRows()
+    {
+        Debug.Log("Change mode to four in rows!");
+    }
+    private void OnChangeModeToBoxing()
+    {
+        Debug.Log("Change mode to boxing!");
     }
 
     void Update()

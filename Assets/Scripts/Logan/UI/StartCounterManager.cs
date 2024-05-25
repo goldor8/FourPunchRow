@@ -1,3 +1,5 @@
+using Logan.Helpers;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
@@ -5,56 +7,58 @@ using UnityEngine.UI;
 
 namespace Logan.UI
 {
-    public class CounterEntity : MonoBehaviour
+    public class StartCounterManager : MonoBehaviour
     {
-        public SoundManager soundManager;
-        public Sprite[] sprites = new Sprite[3];
-        public Image imageDisplay;
-        public PlayableDirector displayPlayableDirector;
+        [SerializeField] private SoundManager soundManager;
+        [SerializeField] private Sprite[] sprites = new Sprite[3];
+        [SerializeField] private Image imageDisplay;
+        [SerializeField] private PlayableDirector displayPlayableDirector;
 
-        private readonly UnityEvent gameCanBeginEvent = new UnityEvent();
-        private double timeSinceLastSecond = 0;
-        private int counter = 0;
-
-
+        private readonly UnityEvent gameCanBeginEvent = new();
+        private readonly Countdown counter = new(4);
+        
         public UnityEvent GetGameCanBeginEvent()
         {
             return gameCanBeginEvent;
         }
 
+        void Start()
+        {
+            counter.Start();
+        }
+
         void Update()
         {
-            timeSinceLastSecond += Time.deltaTime;
-            if (timeSinceLastSecond is 0 or >= 1)
+            if (counter.CanTick(Time.deltaTime))
             {
-                timeSinceLastSecond = 0;
                 OnTick();
-                counter++;
             }
         }
 
         private void OnTick()
         {
-            switch (counter)
+            switch (counter.Value)
             {
-                case 0:
+                case 4:
                     displayPlayableDirector.Play();
                     SetSpriteByCounter();
                     soundManager.PlayCounterSound();
                     break;
-                case 1 or 2:
+                case 3 or 2:
                     SetSpriteByCounter();
                     soundManager.PlayCounterSound();
                     this.transform.localScale -= new Vector3(0.25f, 0.25f, 0.25f);
                     break;
-                case 3:
+                case 1:
                     SetSpriteByCounter();
                     soundManager.PlayFinalCounterSound();
+                    soundManager.PlayDingDingDingSound();
                     this.transform.localScale -= new Vector3(0.25f, 0.25f, 0.25f);
                     break;
                 default:
                     displayPlayableDirector.Stop();
                     imageDisplay.enabled = false;
+                    gameCanBeginEvent.Invoke();
                     this.enabled = false;
                     break;
             }
@@ -62,7 +66,10 @@ namespace Logan.UI
 
         private void SetSpriteByCounter()
         {
-            imageDisplay.sprite = sprites[counter];
+            if (counter.Value > 0)
+            {
+                imageDisplay.sprite = sprites[4 - counter.Value];
+            }
         }
     }
 }

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Logan.UI
+namespace Logan
 {
     [RequireComponent(typeof(AudioSource))]
     public class SoundManager: MonoBehaviour
@@ -9,6 +10,7 @@ namespace Logan.UI
         AudioSource audioData;
         public AudioClip sndCounter;
         public AudioClip sndCounterFinal;
+        public AudioClip sndDing;
 
         public void Start()
         {
@@ -27,6 +29,14 @@ namespace Logan.UI
             if (sndCounterFinal)
             {
                 audioData.PlayOneShot(sndCounterFinal, 0.7F);
+            }
+        }
+
+        public void PlayDingDingDingSound()
+        {
+            if (sndDing)
+            {
+                audioData.PlayOneShot(sndDing, 0.7F);
             }
         }
     }
