@@ -8,9 +8,10 @@ namespace Logan
     public class SoundManager: MonoBehaviour
     {
         AudioSource audioData;
-        public AudioClip sndCounter;
-        public AudioClip sndCounterFinal;
-        public AudioClip sndDing;
+        [SerializeField] private AudioClip sndCounter;
+        [SerializeField] private AudioClip sndCounterFinal;
+        [SerializeField] private AudioClip sndDing;
+        [SerializeField] private AudioClip sndRows;
 
         public void Start()
         {
@@ -37,6 +38,13 @@ namespace Logan
             if (sndDing)
             {
                 audioData.PlayOneShot(sndDing, 0.7F);
+            }
+        }
+        public void PlayRowsSound()
+        {
+            if (sndRows)
+            {
+                audioData.PlayOneShot(sndRows, 0.7F);
             }
         }
     }

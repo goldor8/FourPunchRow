@@ -11,11 +11,10 @@ namespace Logan.UI
     {
         [SerializeField] private SoundManager soundManager;
         [SerializeField] private Sprite[] sprites = new Sprite[3];
-        [SerializeField] private Image imageDisplay;
-        [SerializeField] private PlayableDirector displayPlayableDirector;
+        [SerializeField] private AnimatedOverlayCmp counterOverlay;
 
         private readonly UnityEvent gameCanBeginEvent = new();
-        private readonly Countdown counter = new(4);
+        private readonly Countdown counter = new(3);
         
         public UnityEvent GetGameCanBeginEvent()
         {
@@ -39,25 +38,18 @@ namespace Logan.UI
         {
             switch (counter.Value)
             {
-                case 4:
-                    displayPlayableDirector.Play();
+                case 3:
+                    counterOverlay.ShowAnimated(true);
                     SetSpriteByCounter();
                     soundManager.PlayCounterSound();
                     break;
-                case 3 or 2:
+                case 2 or 1:
                     SetSpriteByCounter();
                     soundManager.PlayCounterSound();
-                    this.transform.localScale -= new Vector3(0.25f, 0.25f, 0.25f);
-                    break;
-                case 1:
-                    SetSpriteByCounter();
-                    soundManager.PlayFinalCounterSound();
-                    soundManager.PlayDingDingDingSound();
-                    this.transform.localScale -= new Vector3(0.25f, 0.25f, 0.25f);
                     break;
                 default:
-                    displayPlayableDirector.Stop();
-                    imageDisplay.enabled = false;
+                    counterOverlay.Hide();
+                    soundManager.PlayFinalCounterSound();
                     gameCanBeginEvent.Invoke();
                     this.enabled = false;
                     break;
@@ -68,7 +60,7 @@ namespace Logan.UI
         {
             if (counter.Value > 0)
             {
-                imageDisplay.sprite = sprites[4 - counter.Value];
+                counterOverlay.SetSprite(sprites[3 - counter.Value]);
             }
         }
     }
