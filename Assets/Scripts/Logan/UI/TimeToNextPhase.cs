@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class TimeToNextPhase : MonoBehaviour
 {
-    private const int TIME_TO_NEXT_PHASE = 3;
+    private const int TIME_TO_NEXT_PHASE = 10;
 
     [SerializeField] private TextMeshProUGUI timeToNextPhaseText;
     [SerializeField] private SoundManager soundManager;

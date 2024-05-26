@@ -4,10 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(CharacterController))]
 public class VRPlayer : Player
 {
     [SerializeField] private GameObject[] HandInteractionGameObjects;
     [SerializeField] private XRInteractor xrInteractor;
+    [SerializeField] private CharacterController characterController;
+
+    [SerializeField] private Transform interactingPos;
+    [SerializeField] private Transform boxingPos;
 
     [SerializeField] private GameObject[] BoxGloveGameObjects;
 
@@ -41,6 +46,12 @@ public class VRPlayer : Player
         }
     }
 
+    public void SetCharacterControllerEnabled(bool value)
+    {
+        characterController.enabled = value;
+        characterController.GetRigidBody().isKinematic = !value;
+    }
+
     public void SetBoxGloveEnabled(bool value)
     {
         foreach (GameObject boxGloveGameObject in BoxGloveGameObjects)
@@ -58,10 +69,16 @@ public class VRPlayer : Player
             case PlayerMode.Interacting:
                 SetBoxGloveEnabled(false);
                 SetHandInteractionEnabled(true);
+                SetCharacterControllerEnabled(false);
+                transform.position = interactingPos.position;
+                transform.rotation = interactingPos.rotation;
                 break;
             case PlayerMode.Boxing:
                 SetHandInteractionEnabled(false);
                 SetBoxGloveEnabled(true);
+                SetCharacterControllerEnabled(true);
+                transform.position = boxingPos.position;
+                transform.rotation = boxingPos.rotation;
                 break;
         }
     }

@@ -24,4 +24,9 @@ public class CharacterController : MonoBehaviour
         Debug.DrawLine(playerRigidbody.position, playerRigidbody.position + playerRigidbody.velocity, Color.green);
         playerRigidbody.angularVelocity = rotation * rotationSpeed * Time.fixedDeltaTime;
     }
+
+    public Rigidbody GetRigidBody()
+    {
+        return playerRigidbody;
+    }
 }
