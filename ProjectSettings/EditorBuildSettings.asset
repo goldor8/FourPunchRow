@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lockroom.unity
+    guid: b131628e32bff104d9cd6ecd1b76f536
+  - enabled: 1
+    path: Assets/Scenes/Puissance4.unity
+    guid: a6139e2a1e3a2da43a3d5a5d48e6ffe3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ec00491ce8ccca74f870b9f8b8c52aff, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 699e91129d6343e45955198912e4b5d3, type: 2}
