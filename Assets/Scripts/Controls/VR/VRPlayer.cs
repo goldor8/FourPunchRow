@@ -11,16 +11,26 @@ public class VRPlayer : Player
     [SerializeField] private GameObject[] BoxGloveGameObjects;
 
     [SerializeField] private PlayerMode playerMode;
+    [SerializeField] private Transform headTransform;
+    [SerializeField] private Transform bodyTransform;
     
     public enum PlayerMode
     {
         Interacting,
         Boxing,
     }
-    
+
+    protected virtual void Start()
+    {
+        GameManager.Singleton.SetPlayer(this);
+    }
+
     public void SetHandInteractionEnabled(bool value)
     {
-        xrInteractor.enabled = value;
+        if (xrInteractor != null)
+        {
+            xrInteractor.enabled = value;
+        }
         foreach (GameObject handInteractionGameObject in HandInteractionGameObjects)
         {
             handInteractionGameObject.SetActive(value);
@@ -55,5 +65,15 @@ public class VRPlayer : Player
     private void OnValidate()
     {
         SetPlayerMode(playerMode);
+    }
+
+    public Transform GetHeadTransform()
+    {
+        return headTransform;
+    }
+
+    public Transform GetBodyTransform()
+    {
+        return bodyTransform;
     }
 }

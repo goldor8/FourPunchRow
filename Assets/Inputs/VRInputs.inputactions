@@ -79,12 +79,12 @@
                 },
                 {
                     "name": "TrackingState",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "5bcae2ac-9e8c-4c60-8c7a-390254b20e7a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -300,12 +300,12 @@
                 },
                 {
                     "name": "TrackingState",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "64a51fe1-8dcb-4cbc-8e85-e46fdb1c2bc6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
