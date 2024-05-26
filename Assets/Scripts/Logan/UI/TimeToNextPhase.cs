@@ -24,7 +24,7 @@ public class TimeToNextPhase : MonoBehaviour
     public void OnGameReallyStarts()
     {
         countdown.Start();
-        soundManager.PlayDingDingDingSound();
+        soundManager.PlayBoxingModeSound();
         phaseBoxingOverlay.ShowAnimated();
     }
     public UnityEvent EvtChangeModeToBoxing()
@@ -60,13 +60,13 @@ public class TimeToNextPhase : MonoBehaviour
     {
         if (isBoxing)
         {
-            soundManager.PlayRowsSound();
+            soundManager.PlayFourRowsModeSound();
             ringGotoBoxingEvent.Invoke();
             phaseFourInRowsOverlay.ShowAnimated();
         }
         else
         {
-            soundManager.PlayDingDingDingSound();
+            soundManager.PlayBoxingModeSound();
             ringGotoFourInRowsEvent.Invoke();
             phaseBoxingOverlay.ShowAnimated();
         }

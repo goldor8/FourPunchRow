@@ -10,13 +10,13 @@ namespace Logan
         AudioSource audioData;
         [SerializeField] private AudioClip sndCounter;
         [SerializeField] private AudioClip sndCounterFinal;
-        [SerializeField] private AudioClip sndDing;
-        [SerializeField] private AudioClip sndRows;
+        [SerializeField] private AudioClip[] sndBoxingMode;
+        [SerializeField] private AudioClip[] sndRowsMode;
         [SerializeField] private AudioClip sndPunchOne;
         [SerializeField] private AudioClip sndPunchTwo;
         [SerializeField] private AudioClip sndPunchThree;
-        [SerializeField] private AudioClip sndPunchFinal;
-        [SerializeField] private AudioClip sndPeopleCheer;
+        [SerializeField] private AudioClip[] sndWinBoxing;
+        [SerializeField] private AudioClip[] sndGameOver;
 
         public void Start()
         {
@@ -38,18 +38,18 @@ namespace Logan
             }
         }
 
-        public void PlayDingDingDingSound()
+        public void PlayBoxingModeSound()
         {
-            if (sndDing)
+            foreach (var sound in sndBoxingMode)
             {
-                audioData.PlayOneShot(sndDing, 0.5F);
+                audioData.PlayOneShot(sound, 0.5F);                    
             }
         }
-        public void PlayRowsSound()
+        public void PlayFourRowsModeSound()
         {
-            if (sndRows)
+            foreach (var sound in sndRowsMode)
             {
-                audioData.PlayOneShot(sndRows, 0.7F);
+                audioData.PlayOneShot(sound, 0.5F);                    
             }
         }
 
@@ -68,10 +68,16 @@ namespace Logan
 
         public void PlayBoxingWinSound()
         {
-            if (sndPunchFinal && sndPeopleCheer)
+            foreach (var sound in sndWinBoxing)
             {
-                audioData.PlayOneShot(sndPunchFinal, 0.7F);   
-                audioData.PlayOneShot(sndPeopleCheer, 0.7F);   
+                audioData.PlayOneShot(sound, 0.5F);                    
+            }
+        }
+        public void PlayGameOverSound()
+        {
+            foreach (var sound in sndGameOver)
+            {
+                audioData.PlayOneShot(sound, 0.5F);                    
             }
         }
     }
