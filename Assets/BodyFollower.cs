@@ -20,12 +20,12 @@ public class BodyFollower : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector3 posDifference = head.transform.position - transform.position;
         posDifference = Vector3.ClampMagnitude(posDifference, maxDistanceFactor);
 
-        rb.velocity = posDifference * Time.deltaTime * bodySpeed;
+        rb.velocity = posDifference * Time.fixedDeltaTime * bodySpeed;
         rb.transform.rotation = Quaternion.Euler(rb.transform.rotation.eulerAngles.x, head.rotation.eulerAngles.y, rb.transform.rotation.eulerAngles.z);
     }
 }

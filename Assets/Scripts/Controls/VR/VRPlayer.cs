@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VRPlayer : Player
 {
@@ -13,6 +14,9 @@ public class VRPlayer : Player
     [SerializeField] private PlayerMode playerMode;
     [SerializeField] private Transform headTransform;
     [SerializeField] private Transform bodyTransform;
+    public UnityEvent<int> OnDamageValueChanged;
+
+    private int damages;
     
     public enum PlayerMode
     {
@@ -75,5 +79,16 @@ public class VRPlayer : Player
     public Transform GetBodyTransform()
     {
         return bodyTransform;
+    }
+
+    public void Damage(int value)
+    {
+        damages += value;
+        OnDamageValueChanged.Invoke(damages);
+    }
+
+    public int GetDamages()
+    {
+        return damages;
     }
 }
